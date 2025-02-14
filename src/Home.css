@@ -10,10 +10,7 @@ body{
 }
 .homeoverall{
     width: 100%;
-    height: 90vh;
-    padding-top: 80px;
-   
-   
+    height: 90vh;  
 }
 .home{
     width: 100%;
@@ -60,4 +57,10 @@ body{
   color: black;
   border: none;
 
+}
+.content p{
+  font-size: 20px;
+}
+.content h1{
+  font-size: 35px;
 }
