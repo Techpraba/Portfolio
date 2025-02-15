@@ -1,13 +1,13 @@
 import { useState } from "react";
 import './Home.css'
 import { Link } from "react-router-dom";
-import pic from './assets/pic.png'
+import pic from './assets/profile.jpg'
 function Home() {
     return (
         <div className="homeoverall ">
             <div className="home">
                 <div className='propic'>
-
+                    <img src={pic} className="pic" />
                 </div>
                 <div className='content'>
                     <h1>Hi,I AM PRABAKARAN </h1>
