@@ -6,10 +6,10 @@ function NavBar() {
 
             <div class="nav">
                 <div class="container">
-                    <Link to="./">  <div class="btn">Home</div></Link>
-                    <Link to="./About">    <div class="btn">About</div></Link>
-                    <Link to="./Project">   <div class="btn">Project</div></Link>
-                    <Link to="./Contact"> <div class="btn">Contact</div></Link>
+                    <Link to="./">  <div class="btn"><h3>Home</h3></div></Link>
+                    <Link to="./About">    <div class="btn"><h3>About</h3></div></Link>
+                    <Link to="./Project">   <div class="btn"><h3>Project</h3></div></Link>
+                    <Link to="./Contact"> <div class="btn"><h3>Contact</h3></div></Link>
                     <svg
                         class="outline"
                         overflow="visible"
