@@ -44,6 +44,7 @@ body {
 }
 
 .info {
+
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -82,9 +83,6 @@ h2 {
     justify-content: space-between;
 }
 
-.project div {
-    width: 48%;
-}
 
 /* ======= Download Resume Button ======= */
 .infobtn {
