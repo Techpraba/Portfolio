@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
 
@@ -9,6 +9,9 @@ const Contact = () => {
         message: "",
     });
 
+    const [statusMessage, setStatusMessage] = useState(""); // Success/Error Message
+    const formRef = useRef(); // Form Reference
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -16,18 +19,23 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        if (!formData.name || !formData.email || !formData.message) {
+            setStatusMessage("All fields are required.");
+            return;
+        }
+
         emailjs.sendForm(
             "service_7js89xj", // Replace with your EmailJS Service ID
             "template_bfhq76m", // Replace with your EmailJS Template ID
-            e.target,
-            "mi5JTdjEt1lBwp5ID" // Replace with your EmailJS Public Key (User ID)
+            formRef.current, // Use useRef() instead of e.target
+            "mi5JTdjEt1lBwp5ID" // Replace with your EmailJS Public Key
         )
             .then((response) => {
-                alert("Email Sent Successfully!");
+                setStatusMessage("✅ Email Sent Successfully!");
                 console.log("SUCCESS!", response.status, response.text);
             })
             .catch((err) => {
-                alert("Failed to send email.");
+                setStatusMessage("❌ Failed to send email. Please try again.");
                 console.log("FAILED...", err);
             });
 
@@ -39,7 +47,8 @@ const Contact = () => {
         <div className="contact-container">
             <div className="contact-box">
                 <h2 className="contact-title">Contact Us</h2>
-                <form className="contact-form" onSubmit={sendEmail}>
+                {statusMessage && <p className="status-message">{statusMessage}</p>}
+                <form ref={formRef} className="contact-form" onSubmit={sendEmail}>
                     <label className="contact-label">Name</label>
                     <input
                         type="text"
