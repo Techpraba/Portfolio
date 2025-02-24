@@ -3,7 +3,7 @@
     height: 100vh;
 }
 .work{
-padding-top: 20px;
+padding-top: 80px;
     font-size: 100px;
     text-align: center;
     color: red;
@@ -18,4 +18,10 @@ padding-top: 20px;
    flex-wrap: wrap;
    margin-top: 40px;
 
+}
+@media screen and (max-width: 500px){
+    .projectoverall{
+        padding-top: 100px;
+    }
+    
 }
