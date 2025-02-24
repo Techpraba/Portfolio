@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import { FiAlignJustify } from "react-icons/fi";
 
 function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,15 +14,15 @@ function NavBar() {
 
                     {/* Hamburger Menu Icon */}
                     <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-                        ☰
+                        <FiAlignJustify />
                     </div>
 
                     {/* Navigation Links */}
                     <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-                        <Link to="./" onClick={() => setMenuOpen(false)}>Home</Link>
-                        <Link to="./About" onClick={() => setMenuOpen(false)}>About</Link>
-                        <Link to="./Project" onClick={() => setMenuOpen(false)}>Projects</Link>
-                        <Link to="./Contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+                        <Link to="./">Home</Link>
+                        <Link to="./About" >About</Link>
+                        <Link to="./Project" >Projects</Link>
+                        <Link to="./Contact" >Contact</Link>
                     </div>
                 </div>
             </div>
