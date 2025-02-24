@@ -19,10 +19,10 @@ function NavBar() {
 
                     {/* Navigation Links */}
                     <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-                        <Link to="./">Home</Link>
-                        <Link to="./About" >About</Link>
-                        <Link to="./Project" >Projects</Link>
-                        <Link to="./Contact" >Contact</Link>
+                        <Link to="./" onClick={() => setMenuOpen(false)}>Home</Link>
+                        <Link to="./About" onClick={() => setMenuOpen(false)}>About</Link>
+                        <Link to="./Project" onClick={() => setMenuOpen(false)}>Projects</Link>
+                        <Link to="./Contact" onClick={() => setMenuOpen(false)}>Contact</Link>
                     </div>
                 </div>
             </div>
